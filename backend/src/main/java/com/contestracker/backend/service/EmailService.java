@@ -74,6 +74,11 @@ public class EmailService {
                         System.out.println("Status: " + response.statusCode());
                         System.out.println("Response: " + response.body());
 
+                        if (response.statusCode() >= 400) {
+                                throw new RuntimeException(
+                                                "Resend API Error: " + response.statusCode() + " - " + response.body());
+                        }
+
                 } catch (
                                 IOException | InterruptedException e) {
                         throw new RuntimeException(e);
