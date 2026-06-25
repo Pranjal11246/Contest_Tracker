@@ -21,6 +21,7 @@ public class AuthController {
     public String register(
             @RequestBody RegisterRequest request
     ) {
+        System.out.println("REGISTER CONTROLLER HIT");
         return authService.register(request);
     }
 
